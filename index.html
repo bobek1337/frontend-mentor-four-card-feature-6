@@ -1,45 +1,260 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+          rel="stylesheet">
+    <title>Frontend Mentor | Four card feature section</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Four card feature section</title>
+        :root {
+            --red: hsl(0, 78%, 62%);
+            --cyan: hsl(180, 62%, 55%);
+            --orange: hsl(34, 97%, 64%);
+            --blue: hsl(212, 86%, 64%);
+            --black-500: hsl(231, 32%, 9%);
+            --grey-500: hsl(234, 12%, 34%);
+            --grey-400: hsl(212, 6%, 44%);
+            --white: hsl(0, 0%, 100%)
+        }
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+        html, body {
+            font-family: "Poppins", Arial serif;
+            width: fit-content;
+            margin: auto;
+            min-height: 100dvh;
+        }
+
+        body {
+            background: white;
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+            text-align: center;
+            width: 100%;
+        }
+
+        .header > p {
+            color: var(--grey-400);
+            text-align: center;
+            font-weight: 500;
+            max-width: 60%;
+            margin-top: 10px;
+        }
+
+        main {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            min-height: 100dvh;
+            width: 80%;
+        }
+
+        h1, h2 {
+            font-weight: 600;
+            color: var(--grey-500);
+        }
+
+        h1:first-child {
+            font-weight: 300;
+            color: var(--grey-400);
+        }
+
+        main > p {
+            color: var(--grey-400);
+            width: 40%;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        .cards-container {
+            display: flex;
+            justify-content: space-between;
+            flex-basis: auto;
+            margin-top: 3em;
+            gap: 2em;
+        }
+
+        .cards {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 2em;
+        }
+
+        .card {
+            min-height: 10em;
+            min-width: 100%;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .card-content {
+            margin: 30px;
+        }
+
+        .card-content > p {
+            width: 100%;
+            margin-top: 5px;
+            color: var(--grey-400);
+            font-size: 14px;
+        }
+
+        .bar {
+            height: 3px;
+        }
+
+        .cyan {
+            background: var(--cyan);
+        }
+
+        .red {
+            background: var(--red);
+        }
+
+        .orange {
+            background: var(--orange);
+        }
+
+        .blue {
+            background: var(--blue);
+        }
+
+        .icon {
+            display: flex;
+            justify-content: end;
+            margin-top: 20px;
+        }
+
+        @media screen and (max-width: 1024px){
+            .cards-container{
+                flex-direction: column;
+            }
+
+            .cards{
+                flex-direction: row;
+            }
+            .card{
+                flex:1;
+                min-width: auto;
+            }
+        }
+
+        @media screen and (max-width: 768px){
+            .cards-container{
+                flex-direction: column;
+            }
+
+            .cards{
+                flex-direction: column;
+            }
+            .card{
+                flex:1;
+                min-width: auto;
+            }
+            body{
+                margin-top: 5em;
+                margin-bottom: 5em;
+            }
+        }
+    </style>
 </head>
 <body>
-  
-  Reliable, efficient delivery
-  Powered by Technology
 
-  Our Artificial Intelligence powered tools use millions of project data points 
-  to ensure that your project is successful
+<main>
+    <div class="header">
+        <h1>Reliable, efficient delivery</h1>
+        <h1>Powered by Technology</h1>
+        <p>Our Artificial Intelligence powered tools use millions of project data points to ensure that your project is
+            successful</p>
+    </div>
+    <div class="cards-container">
+        <div class="cards">
+            <div class="card">
+                <div class="bar cyan"></div>
+                <div class="card-content">
+                    <h2>
+                        Supervisor
+                    </h2>
+                    <p>
+                        Monitors activity to identify project roadblocks
+                    </p>
+                    <div class="icon">
+                        <img src="images/icon-supervisor.svg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
 
-  Supervisor
-  Monitors activity to identify project roadblocks
+        <div class="cards">
+            <div class="card">
+                <div class="bar red"></div>
+                <div class="card-content">
+                    <h2>
+                        Team Builder
+                    </h2>
+                    <p>
+                        Scans our talent network to create the optimal team for your project
+                    </p>
+                    <div class="icon">
+                        <img src="images/icon-team-builder.svg" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="bar orange"></div>
+                <div class="card-content">
+                    <h2>
+                        Karma
+                    </h2>
+                    <p>
+                        Regularly evaluates our talent to ensure quality
+                    </p>
+                    <div class="icon">
+                        <img src="images/icon-karma.svg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
 
-  Team Builder
-  Scans our talent network to create the optimal team for your project
+        <div class="cards">
+            <div class="card">
+                <div class="bar blue"></div>
+                <div class="card-content">
+                    <h2>
+                        Calculator
+                    </h2>
+                    <p>
+                        Uses data from past projects to provide better delivery estimates
+                    </p>
+                    <div class="icon">
+                        <img src="images/icon-calculator.svg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
 
-  Karma
-  Regularly evaluates our talent to ensure quality
-
-  Calculator
-  Uses data from past projects to provide better delivery estimates
-
-  
-  <footer>
-    <p class="attribution">
-      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-      Coded by <a href="#">Your Name Here</a>.
-    </p>
-  </footer>
 </body>
 </html>
